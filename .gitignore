@@ -1,5 +1,23 @@
-/node_modules
-package-lock.json
+# Dependency directories
+node_modules/
 
-.idea/
+# NestJS build output
+dist/
+
+# Environment variables file
 .env
+
+# IDE or editor specific files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# macOS specific files
+.DS_Store
+
+# TypeScript build output
+*.js
+*.map
+*.d.ts
