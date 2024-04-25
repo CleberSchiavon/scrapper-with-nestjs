@@ -13,8 +13,9 @@
     "paths": {
       "controllers/*": ["./src/controllers/*"],
       "services/*": ["./src/services/*"],
-      "dtos/*": ["./src/dtos/*"],
-      "modules/*": ["./src/modules/*"]
+      "types/*": ["./src/types/*"],
+      "modules/*": ["./src/modules/*"],
+      "utils/*": ["./src/utils/*"]
     },
     "incremental": true,
     "skipLibCheck": true,

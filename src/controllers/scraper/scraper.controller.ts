@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from "@nestjs/common";
-import { ScraperService } from "services/scraper/ScraperService";
-import { IScraperRequestDTO } from "dtos/scraper";
+import { ScraperService } from "services/scraper/scraper.service";
+import { IScraperRequestDTO } from "types/dtos/scraper";
 
 @Controller("search")
 export class ScraperController {
