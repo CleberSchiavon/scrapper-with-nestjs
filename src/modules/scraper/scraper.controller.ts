@@ -1,5 +1,5 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from "@nestjs/common";
-import { ApiOkResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiResponse, ApiTags } from "@nestjs/swagger";
 import { IScraperRequestDTO } from "common/dtos/scraper.dto";
 import { RoomDataReturn } from "types/room";
 import { ScraperService } from "./scraper.service";
