@@ -1,7 +1,9 @@
 import { Body, Controller, Post } from "@nestjs/common";
-import { ScraperService } from "services/scraper/scraper.service";
-import { IScraperRequestDTO } from "types/dtos/scraper";
+import { ApiTags } from "@nestjs/swagger";
+import { IScraperRequestDTO } from "common/dtos/scraper";
+import { ScraperService } from "./scraper.service";
 
+@ApiTags("searchScraper")
 @Controller("search")
 export class ScraperController {
   constructor(private readonly scraperService: ScraperService) {}

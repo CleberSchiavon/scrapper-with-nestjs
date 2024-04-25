@@ -1,11 +1,11 @@
 import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
-import { ScraperController } from "controllers/scraper/scraper.controller";
-import { ScraperService } from "services/scraper/scraper.service";
-import { AppController } from "./app.controller";
+import { ScraperController } from "modules/scraper/scraper.controller";
+import { ScraperService } from "modules/scraper/scraper.service";
+import { BrowserService } from "modules/browser/browser.service";
 import { AppService } from "./app.service";
-import { BrowserService } from "services/browser/browser.service";
-import { HTTPLoggerInterceptor } from "./middlewares/http.logger.middleware";
+import { AppController } from "./app.controller";
+import { HTTPLoggerInterceptor } from "middlewares/http.logger.middleware";
 @Module({
   imports: [ConfigModule.forRoot()],
   controllers: [AppController, ScraperController],

@@ -11,10 +11,10 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "controllers/*": ["./src/controllers/*"],
-      "services/*": ["./src/services/*"],
-      "types/*": ["./src/types/*"],
+      "common/*": ["./src/common/*"],
+      "middlewares/*": ["./src/middlewares/*"],
       "modules/*": ["./src/modules/*"],
+      "types/*": ["./src/types/*"],
       "utils/*": ["./src/utils/*"]
     },
     "incremental": true,

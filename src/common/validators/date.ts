@@ -1,4 +1,4 @@
-import { IScraperRequestDTO } from "types/dtos/scraper";
+import { IScraperRequestDTO } from "common/dtos/scraper";
 import { HttpStatusMessages } from "types/enums/http.enums";
 import * as moment from "moment";
 

@@ -1,11 +1,12 @@
 import { Injectable } from "@nestjs/common";
-import { IScraperRequestDTO } from "types/dtos/scraper";
-import { BrowserService } from "services/browser/browser.service";
-import { validateCheckoutDate } from "utils/validators/date";
-import { HTTPHandler, returnScraperURL } from "utils/handlers/http.handler";
 import { Page, Browser as PuppeteerBrowserType } from "puppeteer";
+import { IScraperRequestDTO } from "common/dtos/scraper";
+import { BrowserService } from "modules/browser/browser.service";
+import { validateCheckoutDate } from "common/validators/date";
+import { HTTPHandler, returnScraperURL } from "common/handlers/http.handler";
 import { HttpStatus } from "types/enums/http.enums";
 import { RoomData } from "types/room";
+
 @Injectable()
 export class ScraperService {
   constructor(private readonly browserService: BrowserService) {}
@@ -25,7 +26,7 @@ export class ScraperService {
     );
     // Aqui eu estou criando a função utilitária extractURLFromBackgroundStyle dentro do contexto da página, tentei de vários metodos utilizar de forma externa, mas não funcionou
     await searchPage.evaluate(() => {
-      // @ts-expect-error - Precisei fazer dessa forma pois o evaluate do puppeteer não estava exportando corretamente a função utilitária que eu criei separado dentro do handler
+      // @ts-expect-error - Precisei fazer dessa forma pois o evaluate do puppeteer não estava importando corretamente a função utilitária que eu criei dentro dos handlers
       if (!window.extractURLFromBackgroundStyle) {
         // @ts-expect-error
         window.extractURLFromBackgroundStyle = (

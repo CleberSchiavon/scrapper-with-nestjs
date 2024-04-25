@@ -1,5 +1,5 @@
 import { BadRequestException, HttpException } from "@nestjs/common";
-import { IReturnScraperURL } from "types/dtos/scraper";
+import { IReturnScraperURL } from "common/dtos/scraper";
 import { HttpStatus, HttpStatusMessages } from "types/enums/http.enums";
 
 interface IHTTPHandler {
