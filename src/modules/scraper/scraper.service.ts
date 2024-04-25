@@ -1,10 +1,9 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, HttpStatus } from "@nestjs/common";
 import { Page, Browser as PuppeteerBrowserType } from "puppeteer";
-import { IScraperRequestDTO } from "common/dtos/scraper";
+import { IScraperRequestDTO } from "common/dtos/scraper.dto";
 import { BrowserService } from "modules/browser/browser.service";
 import { validateCheckoutDate } from "common/validators/date";
 import { HTTPHandler, returnScraperURL } from "common/handlers/http.handler";
-import { HttpStatus } from "types/enums/http.enums";
 import { RoomData } from "types/room";
 
 @Injectable()

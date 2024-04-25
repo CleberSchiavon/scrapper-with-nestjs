@@ -1,6 +1,6 @@
-import { BadRequestException, HttpException } from "@nestjs/common";
-import { IReturnScraperURL } from "common/dtos/scraper";
-import { HttpStatus, HttpStatusMessages } from "types/enums/http.enums";
+import { BadRequestException, HttpException, HttpStatus } from "@nestjs/common";
+import { IReturnScraperURL } from "common/dtos/scraper.dto";
+import { HttpStatusMessages } from "types/enums/http.enums";
 
 interface IHTTPHandler {
   type: HttpStatus;
