@@ -112,7 +112,7 @@ yarn release
 ## Autor
 
 <div style="display: flex; flex-direction: row; gap: 1rem; margin-bottom: 1rem">
- <img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQGgoOKHqmLBrw/profile-displayphoto-shrink_800_800/0/1666652600068?e=1719446400&v=beta&t=qdkOAJu5u2K5fQtd-wOkt7HuiEBZiC1uyXWkbB7H0JM" width="100px;" alt=""/>
+ <img style="border-radius: 50%" src="https://media.licdn.com/dms/image/D4D03AQGgoOKHqmLBrw/profile-displayphoto-shrink_800_800/0/1666652600068?e=1719446400&v=beta&t=qdkOAJu5u2K5fQtd-wOkt7HuiEBZiC1uyXWkbB7H0JM" width="50px;" alt=""/>
  <br />
  <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 16px">
  <a href="https://www.linkedin.com/in/cleberschiavon">
