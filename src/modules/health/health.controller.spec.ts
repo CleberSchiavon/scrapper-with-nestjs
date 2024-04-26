@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing'
-import { HealthController, HealthReturnType } from './health.controller'
+import { HealthController } from './health.controller'
 import { HealthService } from './health.service'
 import { HttpStatus } from '@nestjs/common'
+import { HealthReturnType } from 'types/health'
 
 describe('HealthController', () => {
   let controller: HealthController
