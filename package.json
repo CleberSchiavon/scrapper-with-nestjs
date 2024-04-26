@@ -1,6 +1,6 @@
 {
   "name": "asksuite-test",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Cleber Henrique",
   "description": "",
   "main": "server.js",
