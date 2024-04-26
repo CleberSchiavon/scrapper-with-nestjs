@@ -4,15 +4,31 @@ pipelines:
   default:
     - parallel:
         - step:
-            name: Build and Test
+            name: Install Yarn and Package Modules
             caches:
               - node
             script:
-              - npm install
+              - npm install yarn
+              - yarn install
         - step:
-            name: Code linting
+            name: Jest Testing
             script:
-              - npm install eslint
-              - npx eslint .
+              - yarn test
             caches:
               - node
+        - step: 
+            name: Run Linter
+            script:
+              - yarn lint:watch
+            caches:
+              - node
+        - step:
+            name: Check Branch Linter
+            script:
+              - yarn branchlint
+        - step: 
+            name: Release Changelog
+            script:
+              - yarn release
+            caches:
+              - node             

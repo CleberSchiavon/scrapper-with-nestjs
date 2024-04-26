@@ -3,7 +3,6 @@
   "version": "1.2.0",
   "author": "Cleber Henrique",
   "description": "",
-  "main": "server.js",
   "scripts": {
     "prepare": "husky install",
     "build": "nest build",
@@ -13,6 +12,8 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint:watch": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "branchlint": "branchlint",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch --detectOpenHandles",
     "release": "standard-version",
