@@ -12,18 +12,22 @@ pipelines:
               - export PATH=$HOME/.yarn/bin:$PATH
               - yarn install --frozen-lockfile
         - step:
+            name: Build Application
+            caches:
+              - dist
+            script:
+              - yarn build
+        - step:
             name: Jest Testing
             script:
               - yarn test
             caches:
-              - yarncache
+              - dist
         - parallel:
           - step: 
               name: Run Linter
               script:
                 - yarn lint:watch
-              caches:
-                - yarncache
           - step:
               name: Check Branch Linter
               script:
@@ -31,11 +35,10 @@ pipelines:
         - step: 
             name: Release Changelog
             script:
-              - yarn release
-            caches:
-              - yarncache             
+              - yarn release        
 
 definitions:
   caches:
     nodemodulescache: ./node_modules
     yarncache: /usr/local/share/.cache/yarn/
+    dist: ./dist
