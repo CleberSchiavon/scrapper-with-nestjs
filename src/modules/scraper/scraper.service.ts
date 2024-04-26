@@ -13,7 +13,7 @@ export class ScraperService {
   async scrapData(
     browser: PuppeteerBrowserType,
     scraperRequest: IScraperRequestDTO
-  ): Promise<any> {
+  ): Promise<RoomData[]> {
     const pageUrl = returnScraperURL({
       scraperRequest: scraperRequest,
     });
@@ -79,7 +79,7 @@ export class ScraperService {
     return getRoomData;
   }
 
-  async searchHotels(scraperRequest: IScraperRequestDTO): Promise<RoomData> {
+  async searchHotels(scraperRequest: IScraperRequestDTO): Promise<RoomData[]> {
     const isValidCheckoutDate = validateCheckoutDate(scraperRequest);
 
     if (!isValidCheckoutDate.isValid) {
@@ -89,10 +89,7 @@ export class ScraperService {
       });
     }
     const browser = await this.browserService.getBrowser();
-    const scraperResult: RoomData = await this.scrapData(
-      browser,
-      scraperRequest
-    );
+    const scraperResult = await this.scrapData(browser, scraperRequest);
     return scraperResult;
   }
 }

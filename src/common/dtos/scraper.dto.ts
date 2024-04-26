@@ -9,7 +9,7 @@ export class IScraperRequestDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  checkin: string;
+  checkin: string | Date;
 
   /**
    * Parametro de checkout - Utilize o formato YYYY-MM-DD
@@ -19,7 +19,7 @@ export class IScraperRequestDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  checkout: string;
+  checkout: string | Date;
 }
 
 export interface IReturnScraperURL {
