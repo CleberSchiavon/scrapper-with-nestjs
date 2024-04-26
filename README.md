@@ -4,7 +4,6 @@
 ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
@@ -55,10 +54,10 @@ Esse repositório contém
 
 ### 1. Instalar dependências
 
-Nesse projeto o yarn precisa ser utilizado por conta do husky
+Nesse projeto o npm é recomendado de ser utilizado
 
 ```bash
-yarn install
+npm install
 ```
 
 ### 2. Clonar o .env.example
@@ -70,7 +69,7 @@ Crie um arquivo .env usando de base o .env.example na raiz do projeto
 Rode a aplicação de forma local utilizando
 
 ```bash
-yarn start:dev
+npm run start:dev
 ```
 
 ## Sempre lembrar dos conventional commits
@@ -82,31 +81,31 @@ Esse projeto utiliza [conventional commits](https://www.conventionalcommits.org/
 Test - Responsável por rodar todos os testes unitários da aplicação e conferir se tudo está nos conformes!
 
 ```bash
-yarn test
+npm run test
 ```
 
 Você também pode utilizar o test:watch pra conferir os testes unitários em tempo real
 
 ```bash
-yarn test:watch
+npm run test:watch
 ```
 
 Lint - Responsável por rodar o eslint e formatar o código conforme os padrões
 
 ```bash
-yarn lint
+npm run lint
 ```
 
 Format - Responsável por rodar o prettier e formatar o código conforme os padrões
 
 ```bash
-yarn format
+npm run format
 ```
 
 Release - Gera um CHANGELOG automático conforme os
 
 ```bash
-yarn release
+npm run release
 ```
 
 ## Autor
