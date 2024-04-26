@@ -14,9 +14,13 @@
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest --detectOpenHandles",
-    "release": "standard-version",
     "test:watch": "jest --watch --detectOpenHandles",
+    "release": "standard-version",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+  },
+  "engines": {
+    "yarn": ">= 1.20.0",
+    "npm": "please-use-yarn"
   },
   "license": "ISC",
   "dependencies": {

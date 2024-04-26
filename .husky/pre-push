@@ -4,3 +4,4 @@
 npx --no -- branchlint
 npm run lint
 npm run test
+npm run release
