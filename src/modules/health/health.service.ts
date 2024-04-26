@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from "@nestjs/common";
 
 @Injectable()
-export class AppService {
+export class HealthService {
   checkApiHealth() {
     return {
       statusCode: HttpStatus.OK,
