@@ -19,8 +19,6 @@ pipelines:
             name: Jest Testing
             script:
               - yarn test
-            caches:
-              - dist
         - step: 
             name: Run Linter
             script:
