@@ -13,8 +13,6 @@ pipelines:
               - yarn install --frozen-lockfile
         - step:
             name: Build Application
-            caches:
-              - dist
             script:
               - yarn build
         - step:
@@ -23,15 +21,10 @@ pipelines:
               - yarn test
             caches:
               - dist
-        - parallel:
-          - step: 
-              name: Run Linter
-              script:
-                - yarn lint:watch
-          - step:
-              name: Check Branch Linter
-              script:
-                - yarn branchlint
+        - step: 
+            name: Run Linter
+            script:
+              - yarn lint:watch
         - step: 
             name: Release Changelog
             script:
@@ -41,4 +34,3 @@ definitions:
   caches:
     nodemodulescache: ./node_modules
     yarncache: /usr/local/share/.cache/yarn/
-    dist: ./dist
