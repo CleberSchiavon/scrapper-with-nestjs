@@ -3,7 +3,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger'
 import { IScraperRequestDTO } from 'common/dtos/scraper.dto'
 import { RoomDataReturn } from 'types/room'
 import { ScraperService } from './scraper.service'
-@ApiTags('searchScraper')
+@ApiTags('scraper')
 @Controller('search')
 export class ScraperController {
   constructor(private readonly scraperService: ScraperService) {}
