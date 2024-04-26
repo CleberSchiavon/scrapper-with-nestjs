@@ -1,7 +1,7 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { BrowserService } from "./browser.service";
 import { Browser as PuppeteerBrowserType } from "puppeteer";
-const Puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
 
 jest.mock("puppeteer");
 
@@ -27,12 +27,12 @@ describe("BrowserService", () => {
   test("should create a new browser instance when calling getBrowser", async () => {
     const mockBrowser: PuppeteerBrowserType = {} as PuppeteerBrowserType;
     (
-      Puppeteer.launch as jest.MockedFunction<typeof Puppeteer.launch>
+      puppeteer.launch as jest.MockedFunction<typeof puppeteer.launch>
     ).mockResolvedValue(mockBrowser);
 
     const browser = await service.getBrowser();
 
     expect(browser).toBe(mockBrowser);
-    expect(Puppeteer.launch).toHaveBeenCalledTimes(1);
+    expect(puppeteer.launch).toHaveBeenCalledTimes(1);
   });
 });

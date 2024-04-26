@@ -22,7 +22,7 @@ export class IScraperRequestDTO {
   checkout: string | Date;
 }
 
-export interface IReturnScraperURL {
+export interface IReturnScraperUrl {
   scraperRequest: IScraperRequestDTO;
   adultsNumber?: number;
   childsNumber?: number;

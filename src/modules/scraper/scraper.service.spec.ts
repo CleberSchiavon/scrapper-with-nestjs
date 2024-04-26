@@ -54,14 +54,14 @@ describe("ScraperService", () => {
       expect(roomData.length).toBeGreaterThan(0);
       roomData.forEach((roomData) => {
         expect(roomData).toEqual(
-          expect.objectContaining(expectedRoomStructure)
+          expect.objectContaining(expectedRoomStructure),
         );
       });
     }, 30000);
 
     it("should throw an HTTP error when provided with an invalid checkout date", async () => {
       await expect(
-        service.searchHotels(invalidScraperRequestMock)
+        service.searchHotels(invalidScraperRequestMock),
       ).rejects.toThrow();
     });
   });

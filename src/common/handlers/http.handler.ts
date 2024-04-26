@@ -1,14 +1,14 @@
 import { BadRequestException, HttpException, HttpStatus } from "@nestjs/common";
-import { IReturnScraperURL } from "common/dtos/scraper.dto";
+import { IReturnScraperUrl } from "common/dtos/scraper.dto";
 import { HttpStatusMessages } from "types/enums/http.enums";
 
-interface IHTTPHandler {
+interface IHttpHandler {
   type: HttpStatus;
   message: HttpStatusMessages;
   statusCode?: number;
 }
 
-export function HTTPHandler({ type, message, statusCode }: IHTTPHandler) {
+export function HTTPHandler({ type, message, statusCode }: IHttpHandler) {
   switch (type) {
     case HttpStatus.BAD_REQUEST:
       throw new BadRequestException(message, {
@@ -33,6 +33,6 @@ export const returnScraperURL = ({
   hotelCode = scrapperDefaultValues.hotelCode,
   pageLanguage = scrapperDefaultValues.pageLanguage,
   currency = scrapperDefaultValues.currency,
-}: IReturnScraperURL) => {
+}: IReturnScraperUrl) => {
   return `${process.env.SCRAPER_BASE_URL}?checkin=${scraperRequest.checkin}&checkout=${scraperRequest.checkout}&numeroAdultos=${adultsNumber}&criancas=${childsNumber}&codigoHotel=${hotelCode}&idioma=${pageLanguage}&moeda=${currency}`;
 };

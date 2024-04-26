@@ -98,7 +98,7 @@ describe("ScraperController", () => {
         .expect(HttpStatus.BAD_REQUEST);
       const errorMessage = response.body.message;
       expect(errorMessage).toStrictEqual(
-        HttpStatusMessages.INVALID_CHECKOUT_DATE_MESSAGE
+        HttpStatusMessages.INVALID_CHECKOUT_DATE_MESSAGE,
       );
     });
   });

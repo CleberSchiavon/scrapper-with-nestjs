@@ -7,7 +7,7 @@ interface IValidateCheckoutDate {
   message?: HttpStatusMessages;
 }
 export const validateCheckoutDate = (
-  scraperRequest: IScraperRequestDTO
+  scraperRequest: IScraperRequestDTO,
 ): IValidateCheckoutDate => {
   const currentDate = moment().add(-1, "day");
   const checkinDate = moment(scraperRequest.checkin);

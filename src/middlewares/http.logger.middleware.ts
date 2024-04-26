@@ -15,8 +15,8 @@ export class HTTPLoggerInterceptor implements NestMiddleware {
 
       this.logger.log(
         `${method} ${url} ${statusCode} ${contentLength} - ${userAgent} ${ip} BODY - ${JSON.stringify(
-          body
-        )}`
+          body,
+        )}`,
       );
     });
 

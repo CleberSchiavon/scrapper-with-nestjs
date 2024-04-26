@@ -1,8 +1,8 @@
 import { Browser as PuppeteerBrowserType } from "puppeteer";
-const Puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
 export class BrowserService {
   async getBrowser(): Promise<PuppeteerBrowserType> {
-    return Puppeteer.launch();
+    return puppeteer.launch();
   }
 
   async closeBrowser(browser: PuppeteerBrowserType): Promise<void> {

@@ -12,7 +12,7 @@ export class ScraperService {
 
   async scrapData(
     browser: PuppeteerBrowserType,
-    scraperRequest: IScraperRequestDTO
+    scraperRequest: IScraperRequestDTO,
   ): Promise<RoomData[]> {
     const pageUrl = returnScraperURL({
       scraperRequest: scraperRequest,
@@ -21,15 +21,15 @@ export class ScraperService {
     await searchPage.setViewport({ width: 1920, height: 1080 });
     await searchPage.goto(pageUrl);
     await searchPage.waitForSelector(
-      "#main-layout > div.q-page-container > main > article > div.room-list > span > div:nth-child(1) > div.room-option > div.carousel-wrapper > div.lb-carousel.room-option--carousel > span > div > div.q-carousel__slides-container > div > div"
+      "#main-layout > div.q-page-container > main > article > div.room-list > span > div:nth-child(1) > div.room-option > div.carousel-wrapper > div.lb-carousel.room-option--carousel > span > div > div.q-carousel__slides-container > div > div",
     );
     // Aqui eu estou criando a função utilitária extractURLFromBackgroundStyle dentro do contexto da página, tentei de vários metodos utilizar de forma externa, mas não funcionou
     await searchPage.evaluate(() => {
       // @ts-expect-error - Precisei fazer dessa forma pois o evaluate do puppeteer não estava importando corretamente a função utilitária que eu criei dentro dos handlers
       if (!window.extractURLFromBackgroundStyle) {
-        // @ts-expect-error
+        // @ts-expect-error - Por conta do motivo explicado na linha 28, toda chamada ao window o typescript acaba errando o tipo (extractURLFromBackgroundStyle does not exist in window)
         window.extractURLFromBackgroundStyle = (
-          backgroundImageString: string
+          backgroundImageString: string,
         ) => {
           const urlRegex = /url\(['"]?([^'"]+?)['"]?\)/;
           const matches = backgroundImageString.match(urlRegex);
@@ -45,22 +45,22 @@ export class ScraperService {
 
     const getRoomData = await searchPage.evaluate(() => {
       const roomsList = document.querySelectorAll(
-        "#main-layout > div.q-page-container > main > article > div.room-list > span > div"
+        "#main-layout > div.q-page-container > main > article > div.room-list > span > div",
       );
 
       const roomInformation = Array.from(roomsList).map((room) => {
         const roomName = room.querySelector(
-          "div.room-option > div.room-infos > div.room-infos-guests-block > div.room-option-title.desktop-only > h3 > span"
+          "div.room-option > div.room-infos > div.room-infos-guests-block > div.room-option-title.desktop-only > h3 > span",
         );
         const roomDescription = room.querySelector(
-          "div.room-option > div.room-infos > div.room-infos-guests-block > div.room-option-title.desktop-only > p"
+          "div.room-option > div.room-infos > div.room-infos-guests-block > div.room-option-title.desktop-only > p",
         );
         const roomPrice = room.querySelector(
-          "div.room-option > div.room-infos > div.room-rates-wrapper > div.room-rates-price > div.daily-price > p.lb-text__xxs-h4.lb-text__md-h3.lb-text__weight-4.lb-text.text-alert-500.daily-price--total > strong"
+          "div.room-option > div.room-infos > div.room-rates-wrapper > div.room-rates-price > div.daily-price > p.lb-text__xxs-h4.lb-text__md-h3.lb-text__weight-4.lb-text.text-alert-500.daily-price--total > strong",
         );
         const roomImageUrl = room
           .querySelector(
-            "div.room-option > div.carousel-wrapper > div.lb-carousel.room-option--carousel > span > div > div.q-carousel__slides-container > div > div"
+            "div.room-option > div.carousel-wrapper > div.lb-carousel.room-option--carousel > span > div > div.q-carousel__slides-container > div > div",
           )
           .getAttribute("style");
 
@@ -68,7 +68,7 @@ export class ScraperService {
           name: roomName ? roomName.textContent : "",
           description: roomDescription ? roomDescription.textContent : "",
           price: roomPrice ? roomPrice.textContent : "",
-          // @ts-expect-error
+          // @ts-expect-error - Por conta do motivo explicado na linha 28, toda chamada ao window o typescript acaba errando o tipo (extractURLFromBackgroundStyle does not exist in window)
           image: window.extractURLFromBackgroundStyle(roomImageUrl),
         };
       });

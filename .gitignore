@@ -21,3 +21,6 @@ dist/
 *.js
 *.map
 *.d.ts
+
+# Enabling eslintrc.js
+!.eslintrc.js
