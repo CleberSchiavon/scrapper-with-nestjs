@@ -1,4 +1,4 @@
-import { IsDateString, IsNotEmpty } from "class-validator";
+import { IsDateString, IsNotEmpty } from 'class-validator'
 
 export class IScraperRequestDTO {
   /**
@@ -9,7 +9,7 @@ export class IScraperRequestDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  checkin: string | Date;
+  checkin: string | Date
 
   /**
    * Parametro de checkout - Utilize o formato YYYY-MM-DD
@@ -19,14 +19,14 @@ export class IScraperRequestDTO {
 
   @IsNotEmpty()
   @IsDateString()
-  checkout: string | Date;
+  checkout: string | Date
 }
 
 export interface IReturnScraperUrl {
-  scraperRequest: IScraperRequestDTO;
-  adultsNumber?: number;
-  childsNumber?: number;
-  hotelCode?: number;
-  pageLanguage?: string;
-  currency?: string;
+  scraperRequest: IScraperRequestDTO
+  adultsNumber?: number
+  childsNumber?: number
+  hotelCode?: number
+  pageLanguage?: string
+  currency?: string
 }

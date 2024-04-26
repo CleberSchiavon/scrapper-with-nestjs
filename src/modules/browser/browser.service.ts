@@ -1,14 +1,14 @@
-import { Browser as PuppeteerBrowserType } from "puppeteer";
-import puppeteer from "puppeteer";
+import { Browser as PuppeteerBrowserType } from 'puppeteer'
+import puppeteer from 'puppeteer'
 export class BrowserService {
   async getBrowser(): Promise<PuppeteerBrowserType> {
-    return puppeteer.launch();
+    return puppeteer.launch()
   }
 
   async closeBrowser(browser: PuppeteerBrowserType): Promise<void> {
     if (!browser) {
-      return;
+      return
     }
-    return browser.close();
+    return browser.close()
   }
 }

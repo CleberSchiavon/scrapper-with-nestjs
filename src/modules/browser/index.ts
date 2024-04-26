@@ -1,5 +1,5 @@
-import { BrowserService } from "./browser.service";
+import { BrowserService } from './browser.service'
 
 export const BrowserModule = {
   service: BrowserService,
-};
+}

@@ -1,38 +1,37 @@
-import { Test, TestingModule } from "@nestjs/testing";
-import { BrowserService } from "./browser.service";
-import { Browser as PuppeteerBrowserType } from "puppeteer";
-import puppeteer from "puppeteer";
+import { Test, TestingModule } from '@nestjs/testing'
+import { BrowserService } from './browser.service'
+import puppeteer, { Browser as PuppeteerBrowserType } from 'puppeteer'
 
-jest.mock("puppeteer");
+jest.mock('puppeteer')
 
-describe("BrowserService", () => {
-  let service: BrowserService;
+describe('BrowserService', () => {
+  let service: BrowserService
 
   beforeEach(async () => {
-    jest.resetModules();
+    jest.resetModules()
     const module: TestingModule = await Test.createTestingModule({
       providers: [BrowserService],
-    }).compile();
-    service = module.get<BrowserService>(BrowserService);
-  });
+    }).compile()
+    service = module.get<BrowserService>(BrowserService)
+  })
 
-  it("BrowserService should be defined", () => {
-    expect(service).toBeDefined();
-  });
+  it('BrowserService should be defined', () => {
+    expect(service).toBeDefined()
+  })
 
-  it("should handle closeBrowser gracefully if browser is undefined", async () => {
-    await expect(service.closeBrowser(undefined)).resolves.toBeUndefined();
-  });
+  it('should handle closeBrowser gracefully if browser is undefined', async () => {
+    await expect(service.closeBrowser(undefined)).resolves.toBeUndefined()
+  })
 
-  test("should create a new browser instance when calling getBrowser", async () => {
-    const mockBrowser: PuppeteerBrowserType = {} as PuppeteerBrowserType;
-    (
+  test('should create a new browser instance when calling getBrowser', async () => {
+    const mockBrowser: PuppeteerBrowserType = {} as PuppeteerBrowserType
+    ;(
       puppeteer.launch as jest.MockedFunction<typeof puppeteer.launch>
-    ).mockResolvedValue(mockBrowser);
+    ).mockResolvedValue(mockBrowser)
 
-    const browser = await service.getBrowser();
+    const browser = await service.getBrowser()
 
-    expect(browser).toBe(mockBrowser);
-    expect(puppeteer.launch).toHaveBeenCalledTimes(1);
-  });
-});
+    expect(browser).toBe(mockBrowser)
+    expect(puppeteer.launch).toHaveBeenCalledTimes(1)
+  })
+})

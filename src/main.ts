@@ -1,29 +1,29 @@
-import { NestFactory } from "@nestjs/core";
-import { INestApplication, ValidationPipe } from "@nestjs/common";
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import { AppModule } from "./app.module";
+import { NestFactory } from '@nestjs/core'
+import { INestApplication, ValidationPipe } from '@nestjs/common'
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
+import { AppModule } from './app.module'
 
-const port: string | 8080 = process.env.PORT || 8080;
+const port: string | 8080 = process.env.PORT || 8080
 
 async function bootstrap(): Promise<void> {
-  const app: INestApplication<any> = await NestFactory.create(AppModule);
+  const app: INestApplication<any> = await NestFactory.create(AppModule)
 
   const config = new DocumentBuilder()
-    .setTitle("Ask Suite Teste Dev")
+    .setTitle('Ask Suite Teste Dev')
     .setDescription(
-      "Bem vindo a documentação dessa API da AskSuite no Swagger!",
+      'Bem vindo a documentação dessa API da AskSuite no Swagger!',
     )
-    .setVersion("1.0")
+    .setVersion('1.0')
     .setContact(
-      "Cleber Henrique",
-      "https://github.com/cleberschiavon",
-      "cleberschiavon@outlook.com",
+      'Cleber Henrique',
+      'https://github.com/cleberschiavon',
+      'cleberschiavon@outlook.com',
     )
-    .build();
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup("swagger", app, document);
-  app.useGlobalPipes(new ValidationPipe()); // Adicionando validadores de DTO's aqui
-  await app.listen(port);
-  console.log(`Listening on port ${port}`);
+    .build()
+  const document = SwaggerModule.createDocument(app, config)
+  SwaggerModule.setup('swagger', app, document)
+  app.useGlobalPipes(new ValidationPipe()) // Adicionando validadores de DTO's aqui
+  await app.listen(port)
+  console.log(`Listening on port ${port}`)
 }
-bootstrap();
+bootstrap()

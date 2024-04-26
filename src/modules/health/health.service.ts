@@ -1,11 +1,11 @@
-import { HttpStatus, Injectable } from "@nestjs/common";
+import { HttpStatus, Injectable } from '@nestjs/common'
 
 @Injectable()
 export class HealthService {
   checkApiHealth() {
     return {
       statusCode: HttpStatus.OK,
-      message: "Hello AskSuite World!",
-    };
+      message: 'Hello AskSuite World!',
+    }
   }
 }
