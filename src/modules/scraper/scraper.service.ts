@@ -1,5 +1,5 @@
 import { Injectable, HttpStatus } from '@nestjs/common'
-import { Page, Browser as PuppeteerBrowserType } from 'puppeteer'
+import { Page } from 'puppeteer'
 import { IScraperRequestDTO } from 'common/dtos/scraper.dto'
 import { BrowserService } from 'modules/browser/browser.service'
 import { validateCheckoutDate } from 'common/validators/date'
