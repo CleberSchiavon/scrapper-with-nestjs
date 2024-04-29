@@ -24,10 +24,10 @@ describe('ScraperService', () => {
   }
 
   const expectedRoomStructure = {
-    name: expect.any(String),
-    description: expect.any(String),
-    price: expect.any(String),
-    image: expect.any(String),
+    roomName: expect.any(String),
+    roomDescription: expect.any(String),
+    roomPrice: expect.any(String),
+    roomImage: expect.any(String),
   }
 
   beforeEach(async () => {
