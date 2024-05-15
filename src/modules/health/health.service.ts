@@ -5,7 +5,7 @@ export class HealthService {
   checkApiHealth() {
     return {
       statusCode: HttpStatus.OK,
-      message: 'Hello AskSuite World!',
+      message: 'Hello World!',
     }
   }
 }

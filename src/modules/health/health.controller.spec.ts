@@ -22,7 +22,7 @@ describe('HealthController', () => {
     it('should return the health status of the API', async () => {
       const expectedResult: HealthReturnType = {
         statusCode: HttpStatus.OK,
-        message: 'Hello AskSuite World!',
+        message: 'Hello World!',
       }
 
       jest

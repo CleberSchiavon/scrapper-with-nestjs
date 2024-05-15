@@ -12,7 +12,7 @@ describe('HealthService', () => {
     it('should return the health status of the API', () => {
       const expectedResult = {
         statusCode: HttpStatus.OK,
-        message: 'Hello AskSuite World!',
+        message: 'Hello World!',
       }
 
       const result = service.checkApiHealth()

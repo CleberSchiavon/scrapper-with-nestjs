@@ -1,9 +1,8 @@
 {
-  "name": "asksuite-test",
+  "name": "hotel-scrapper-nest",
   "version": "1.3.0",
   "main": "dist/src/main.js",
   "author": "Cleber Henrique",
-  "description": "Teste feito para a AskSuite",
   "scripts": {
     "prepare": "husky install",
     "build": "nest build",

@@ -1,4 +1,4 @@
-# Teste AskSuite - Cleber Henrique
+# Hotel Scraper with NestJS
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
@@ -7,21 +7,17 @@
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-Teste feito para a AskSuite, agradeço demais pela oportunidade e estejamos juntos nos próximos passos! 🚀🧡
-
 ## Contexto
 
-O viajante chega ao nosso bot e pede “Cotação de preço”. Em seguida, o bot pergunta as datas em que o viajante deseja ficar no hotel do bot. No momento em que o viajante preenche os dados solicitados o bot precisa pesquisar os preços de cada quarto disponível no horário de check-in/check-out.
+O viajante chega ao bot e pede “Cotação de preço”. Em seguida, o bot pergunta as datas em que o viajante deseja ficar no hotel do bot. No momento em que o viajante preenche os dados solicitados o bot precisa pesquisar os preços de cada quarto disponível no horário de check-in/check-out.
 
-Para alcançar este resultado você pode:
-
-Com o puppeteer, vá para o URL fornecida
+Com o puppeteer, o bot vai para o URL fornecida
 
 ```
 https://pratagy.letsbook.com.br/D/Reserva
 ```
 
-Após isso, recupere todas as informações necessárias para montar a payload usando métodos de web crawling
+Após isso, o bot recupera todas as informações necessárias para montar a payload usando métodos de web crawling
 
 ### Importante, a versão recomendada do node pra rodar esse projeto é >=20.9.0
 
@@ -120,3 +116,4 @@ cleberschiavon@outlook.com
  </div>
 
 [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cleberschiavon)
+

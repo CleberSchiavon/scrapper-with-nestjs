@@ -9,10 +9,8 @@ async function bootstrap(): Promise<void> {
   const app: INestApplication<any> = await NestFactory.create(AppModule)
 
   const config = new DocumentBuilder()
-    .setTitle('Ask Suite Teste Dev')
-    .setDescription(
-      'Bem vindo a documentação dessa API da AskSuite no Swagger!',
-    )
+    .setTitle('Hotel Crawler Swagger')
+    .setDescription('Bem vindo a documentação dessa API no Swagger!')
     .setVersion('1.0')
     .setContact(
       'Cleber Henrique',
